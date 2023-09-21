@@ -9,7 +9,8 @@ const MainHeader = (props) => {
       <h1>A Typical Page</h1>
       <Navigation 
         // isLoggedIn={props.isAuthenticated} 
-        onLogout={props.onLogout} />
+        // onLogout={props.onLogout} 
+      />
     </header>
   );
 };
