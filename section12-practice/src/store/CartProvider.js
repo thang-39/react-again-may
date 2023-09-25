@@ -50,10 +50,15 @@ const cartReducer = (prevState, action) => {
         item => item.id !== action.id
       )
     } else {
-      const updatedItems = { ...existingItem, amount: existingItem.amount -1};
+      const updatedItem = { ...existingItem, amount: existingItem.amount -1};
       updatedItems = [...prevState.items];
-      updatedItems[existingCartItemIndex] = updatedItems;
+      updatedItems[existingCartItemIndex] = updatedItem;
     }
+
+    return {
+      items: updatedItems,
+      totalAmount: updatedTotalAmount
+    };
   }
     
   return defaultCartState;
